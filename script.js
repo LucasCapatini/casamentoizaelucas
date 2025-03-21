@@ -46,7 +46,7 @@ uploadButton.addEventListener('click', () => {
     fetch('https://script.google.com/macros/s/AKfycbz_mdCVwhjpFslkTIXpQTVm1AImgOgQmMpkwhrC_RCDWYtDa9BvZ0M_1tOwz0i-laeqXg/exec', {
         redirect: "follow",
         method: 'POST',
-        body: photoBlob,
+        body: JSON.stringify(DATA),
         headers: {
           'Content-Type': 'text/plain;charset=utf-8',
         },

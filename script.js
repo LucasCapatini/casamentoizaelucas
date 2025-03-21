@@ -43,7 +43,7 @@ uploadButton.addEventListener('click', () => {
     statusText.textContent = 'Enviando...';
   
     // Enviar o blob diretamente
-    fetch('https://script.google.com/macros/s/AKfycbwHqSbvlgDkG4H4e4TFuRb8PMgXxkfeO74Q7xFrFua9t0cpA28lWi6Dsbo6xSsGELa3Ew/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbxLtpO7yEG_O825yShazW02NQ8TK6lh6gDreulbtVebV5DMZF-pKaQPtVNrZaxLVrEldg/exec', {
         redirect: "follow",
         method: 'POST',
         body: photoBlob,

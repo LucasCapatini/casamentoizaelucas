@@ -35,25 +35,26 @@ captureButton.addEventListener('click', () => {
 
 // Enviar foto para o Google Drive
 uploadButton.addEventListener('click', () => {
-  if (!photoBlob) {
-    statusText.textContent = 'Nenhuma foto capturada.';
-    return;
-  }
-
-  statusText.textContent = 'Enviando...';
-
-  const formData = new FormData();
-  formData.append('file', photoBlob, 'foto_casamento.png');
-
-  fetch('https://script.google.com/macros/s/AKfycbxEOyTUtsj4f__cQ4STdLqZPeX1gXKYUk56PPhx2ghwjeapItSd7-Xlp4T4NzJHy9Azsg/exec', {
-    method: 'POST',
-    body: formData,
-  })
-    .then((response) => response.text())
-    .then((result) => {
-      statusText.textContent = result;
+    if (!photoBlob) {
+      statusText.textContent = 'Nenhuma foto capturada.';
+      return;
+    }
+  
+    statusText.textContent = 'Enviando...';
+  
+    // Enviar o blob diretamente
+    fetch('https://script.google.com/macros/s/AKfycbx-299NsPrdftAp4wFyQCnfptLN2XhRNBw6ipHuvghZxjDrglgGf2ye6lhfQhP8BgtaZQ/exec', {
+      method: 'POST',
+      body: photoBlob, // Envia o blob diretamente
+      headers: {
+        'Content-Type': 'image/png', // Define o tipo de conteúdo
+      },
     })
-    .catch((error) => {
-      statusText.textContent = 'Erro ao enviar: ' + error.message;
-    });
-});
+      .then((response) => response.text())
+      .then((result) => {
+        statusText.textContent = result;
+      })
+      .catch((error) => {
+        statusText.textContent = 'Erro ao enviar: ' + error.message;
+      });
+  });

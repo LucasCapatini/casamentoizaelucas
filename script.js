@@ -5,7 +5,7 @@ const previewDiv = document.getElementById('preview');
 const uploadButton = document.getElementById('upload');
 const statusText = document.getElementById('status');
 
-let photoBlob = null;
+let photoBlob = null; // Variável global para armazenar o blob da foto
 
 // Acessar a webcam
 navigator.mediaDevices.getUserMedia({ video: true })
@@ -29,39 +29,33 @@ captureButton.addEventListener('click', () => {
 
   // Converter a foto para Blob
   canvas.toBlob((blob) => {
-    photoBlob = blob;
+    photoBlob = blob; // Inicializa a variável photoBlob
   }, 'image/png');
 });
 
 // Enviar foto para o Google Drive
 uploadButton.addEventListener('click', () => {
-    if (!photoBlob) {
-      statusText.textContent = 'Nenhuma foto capturada.';
-      return;
-    }
-  
-    statusText.textContent = 'Enviando...';
-  
-    // Enviar o blob diretamente
-    fetch('https://script.google.com/macros/s/AKfycbxLtpO7yEG_O825yShazW02NQ8TK6lh6gDreulbtVebV5DMZF-pKaQPtVNrZaxLVrEldg/exec', {
-        redirect: "follow",
-        method: 'POST',
-        body: photoBlob,
-        headers: {
-          'Content-Type': 'image/png',
-          'Access-Control-Allow-Origin': 'https://lucascapatini.github.io/casamentoizaelucas/'
-        },
-        mode: 'no-cors',
-      })
-        .then((response) => response.json())
-        .then((result) => {
-          if (result.success) {
-            statusText.textContent = result.success;
-          } else if (result.error) {
-            statusText.textContent = result.error;
-          }
-        })
-        .catch((error) => {
-          statusText.textContent = 'Erro ao enviar: ' + error.message;
-        });
-  });
+  if (!photoBlob) {
+    statusText.textContent = 'Nenhuma foto capturada.';
+    return;
+  }
+
+  statusText.textContent = 'Enviando...';
+
+  // Enviar o blob diretamente
+  fetch('https://script.google.com/macros/s/AKfycbxLtpO7yEG_O825yShazW02NQ8TK6lh6gDreulbtVebV5DMZF-pKaQPtVNrZaxLVrEldg/exec', {
+    redirect: "follow",
+    method: 'POST',
+    body: photoBlob,
+    headers: {
+      'Content-Type': 'image/png',
+    },
+    mode: 'no-cors',
+  })
+    .then(() => {
+      statusText.textContent = 'Foto enviada com sucesso!';
+    })
+    .catch((error) => {
+      statusText.textContent = 'Erro ao enviar: ' + error.message;
+    });
+});

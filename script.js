@@ -44,11 +44,13 @@ uploadButton.addEventListener('click', () => {
   
     // Enviar o blob diretamente
     fetch('https://script.google.com/macros/s/AKfycbz_mdCVwhjpFslkTIXpQTVm1AImgOgQmMpkwhrC_RCDWYtDa9BvZ0M_1tOwz0i-laeqXg/exec', {
+        redirect: "follow",
         method: 'POST',
         body: photoBlob,
         headers: {
           'Content-Type': 'image/png',
         },
+        mode: 'no-cors',
       })
         .then((response) => response.json())
         .then((result) => {

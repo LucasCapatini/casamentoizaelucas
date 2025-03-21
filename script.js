@@ -48,7 +48,7 @@ uploadButton.addEventListener('click', () => {
         method: 'POST',
         body: photoBlob,
         headers: {
-          'Content-Type': 'image/png',
+          'Content-Type': 'text/plain;charset=utf-8',
         },
         mode: 'no-cors',
       })

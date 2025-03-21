@@ -43,16 +43,16 @@ uploadButton.addEventListener('click', () => {
     statusText.textContent = 'Enviando...';
   
     // Enviar o blob diretamente
-    fetch('https://script.google.com/macros/s/AKfycbx5DxC9oPFZcdXZnZXbqLClh7b_QcyF0TstIjbh-kdw/dev', {
+    fetch('http://localhost:3000/upload', {
         method: 'POST',
         body: photoBlob,
         headers: {
           'Content-Type': 'image/png',
         },
-        mode: 'no-cors', // Desativa o CORS
       })
-        .then(() => {
-          statusText.textContent = 'Foto enviada com sucesso!';
+        .then((response) => response.text())
+        .then((result) => {
+          statusText.textContent = result;
         })
         .catch((error) => {
           statusText.textContent = 'Erro ao enviar: ' + error.message;

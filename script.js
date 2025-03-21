@@ -4,6 +4,9 @@ const captureButton = document.getElementById('capture');
 const previewDiv = document.getElementById('preview');
 const uploadButton = document.getElementById('upload');
 const statusText = document.getElementById('status');
+const DATA = {
+    photo: photoBlob, // Certifique-se de que photoBlob é um Blob ou File
+  };
 
 let photoBlob = null;
 
@@ -43,7 +46,7 @@ uploadButton.addEventListener('click', () => {
     statusText.textContent = 'Enviando...';
   
     // Enviar o blob diretamente
-    fetch('https://script.google.com/macros/s/AKfycbz_mdCVwhjpFslkTIXpQTVm1AImgOgQmMpkwhrC_RCDWYtDa9BvZ0M_1tOwz0i-laeqXg/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbwHqSbvlgDkG4H4e4TFuRb8PMgXxkfeO74Q7xFrFua9t0cpA28lWi6Dsbo6xSsGELa3Ew/exec', {
         redirect: "follow",
         method: 'POST',
         body: JSON.stringify(DATA),

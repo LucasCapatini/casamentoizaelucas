@@ -4,9 +4,6 @@ const captureButton = document.getElementById('capture');
 const previewDiv = document.getElementById('preview');
 const uploadButton = document.getElementById('upload');
 const statusText = document.getElementById('status');
-const DATA = {
-    photo: photoBlob, // Certifique-se de que photoBlob é um Blob ou File
-  };
 
 let photoBlob = null;
 
@@ -49,9 +46,10 @@ uploadButton.addEventListener('click', () => {
     fetch('https://script.google.com/macros/s/AKfycbwHqSbvlgDkG4H4e4TFuRb8PMgXxkfeO74Q7xFrFua9t0cpA28lWi6Dsbo6xSsGELa3Ew/exec', {
         redirect: "follow",
         method: 'POST',
-        body: JSON.stringify(DATA),
+        body: photoBlob,
         headers: {
-          'Content-Type': 'text/plain;charset=utf-8',
+          'Content-Type': 'image/png',
+          'Access-Control-Allow-Origin': 'https://lucascapatini.github.io/casamentoizaelucas/'
         },
         mode: 'no-cors',
       })

@@ -43,18 +43,18 @@ uploadButton.addEventListener('click', () => {
     statusText.textContent = 'Enviando...';
   
     // Enviar o blob diretamente
-    fetch('https://script.google.com/macros/s/AKfycbw7LTDHGTFlO117Qk7mAz3SSayFjJTKyCfnUMXX1KUfmuvNW2bf_AoP2dpmODrVpEt8cw/exec', {
-      method: 'POST',
-      body: photoBlob, // Envia o blob diretamente
-      headers: {
-        'Content-Type': 'image/png', // Define o tipo de conteúdo
-      },
-    })
-      .then((response) => response.text())
-      .then((result) => {
-        statusText.textContent = result;
+    fetch('https://script.google.com/macros/s/AKfycbx5DxC9oPFZcdXZnZXbqLClh7b_QcyF0TstIjbh-kdw/dev', {
+        method: 'POST',
+        body: photoBlob,
+        headers: {
+          'Content-Type': 'image/png',
+        },
+        mode: 'no-cors', // Desativa o CORS
       })
-      .catch((error) => {
-        statusText.textContent = 'Erro ao enviar: ' + error.message;
-      });
+        .then(() => {
+          statusText.textContent = 'Foto enviada com sucesso!';
+        })
+        .catch((error) => {
+          statusText.textContent = 'Erro ao enviar: ' + error.message;
+        });
   });

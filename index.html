@@ -180,10 +180,10 @@
       color: var(--text-color);
     }
 
-    /* Timeline Style */
+    /* Timeline Style - Versão Ajustada */
     .timeline {
       position: relative;
-      max-width: 800px;
+      max-width: 100%;
       margin: 2rem auto;
     }
 
@@ -194,31 +194,32 @@
       background-color: var(--accent-color);
       top: 0;
       bottom: 0;
-      left: 50px;
+      left: 100px;
       margin-left: -1px;
     }
 
     .timeline-item {
-      padding: 10px 0 10px 70px;
+      padding: 10px 0 10px 120px;
       position: relative;
+      margin-bottom: 15px;
     }
 
     .timeline-date {
       position: absolute;
       left: 0;
-      width: 93px;
+      width: 90px;
       text-align: right;
       padding-right: 15px;
-      padding-top: 15px;
+      padding-top: 5px;
       font-weight: 600;
       color: var(--primary-color);
+      font-size: 1rem;
+      white-space: nowrap;
     }
 
     .timeline-content {
       background-color: rgba(255, 255, 255, 0.9);
-      padding: 15px;
-      width: 680px;
-      left: 35px;
+      padding: 12px 15px;
       border-radius: 8px;
       box-shadow: 0 3px 6px rgba(0,0,0,0.1);
       position: relative;
@@ -227,38 +228,38 @@
     .timeline-content::before {
       content: '';
       position: absolute;
-      width: 15px;
-      height: 15px;
-      left: -8px;
+      width: 12px;
+      height: 12px;
+      left: -6px;
       top: 15px;
       background-color: var(--primary-color);
       border-radius: 50%;
-      border: 3px solid var(--accent-color);
+      border: 2px solid var(--accent-color);
     }
 
     .timeline-title {
       font-weight: 600;
       color: var(--primary-color);
-      margin-bottom: 5px;
-      padding-left: 10px;
-      font-size: 1.1rem;
+      margin-bottom: 0;
+      font-size: 1rem;
     }
 
     .timeline-divider {
       font-weight: bold;
       text-transform: uppercase;
       color: var(--primary-color);
-      margin: 20px 0 10px 0;
-      padding-left: 70px;
+      margin: 25px 0 15px 0;
+      padding-left: 120px;
       position: relative;
+      font-size: 1rem;
     }
 
     .timeline-divider::before {
       content: '';
       position: absolute;
-      left: 50px;
+      left: 100px;
       top: 50%;
-      width: 20px;
+      width: 15px;
       height: 2px;
       background-color: var(--accent-color);
       transform: translateX(-100%);
@@ -278,6 +279,11 @@
       padding: 15px 0;
       margin: 1rem 0;
       -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .dress-code-images::-webkit-scrollbar {
+      display: none;
     }
 
     .dress-code-image {
@@ -289,6 +295,7 @@
       background-size: cover;
       background-position: center;
       box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      background-repeat: no-repeat;
     }
 
     /* Seção de Presentes */
@@ -323,43 +330,87 @@
       max-height: 100%;
     }
 
-    @media (max-width: 600px) {
+    /* Ajustes para telas médias */
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 80px;
+      }
+      
+      .timeline-item {
+        padding-left: 100px;
+      }
+      
+      .timeline-date {
+        width: 70px;
+      }
+      
+      .timeline-divider {
+        padding-left: 100px;
+      }
+      
+      .timeline-divider::before {
+        left: 80px;
+      }
+    }
+
+    /* Ajustes para mobile */
+    @media (max-width: 480px) {
       .couple-names {
         font-size: 3rem;
       }
+      
       .date-location {
         font-size: 1.1rem;
       }
+      
       main {
         padding: 1.5rem;
       }
+      
       .button {
         padding: 10px 20px;
         margin: 8px 0;
         width: 100%;
       }
+      
       .countdown {
         gap: 8px;
       }
+      
       .countdown-item {
         min-width: 60px;
       }
+      
       .timeline::before {
-        left: 40px;
+        left: 60px;
       }
+      
       .timeline-item {
-        padding-left: 60px;
+        padding-left: 80px;
       }
+      
       .timeline-date {
-        width: 60px;
+        width: 50px;
+        font-size: 0.9rem;
+        padding-right: 10px;
+      }
+      
+      .timeline-content {
+        padding: 10px 12px;
+      }
+      
+      .timeline-divider {
+        padding-left: 80px;
         font-size: 0.9rem;
       }
-      .timeline-divider {
-        padding-left: 60px;
+      
+      .timeline-divider::before {
+        left: 60px;
       }
+      
       .dress-code-image {
-        width: 180px;
-        height: 270px;
+        width: 160px;
+        height: 240px;
       }
     }
   </style>
@@ -403,7 +454,7 @@
         <h2>Nossa Semana de Festa</h2>
         
         <div class="timeline">
-          <div class="timeline-divider">Partiu Paraty</div>
+          <div class="timeline-divider">PARTIU PARATY</div>
           
           <div class="timeline-item">
             <div class="timeline-date">19/11</div>
@@ -419,7 +470,7 @@
             </div>
           </div>
           
-          <div class="timeline-divider">Boas-vindas</div>
+          <div class="timeline-divider">BOAS-VINDAS</div>
           
           <div class="timeline-item">
             <div class="timeline-date">20/11</div>
@@ -428,7 +479,7 @@
             </div>
           </div>
           
-          <div class="timeline-divider">Praia</div>
+          <div class="timeline-divider">PRAIA</div>
           
           <div class="timeline-item">
             <div class="timeline-date">21/11</div>
@@ -437,7 +488,7 @@
             </div>
           </div>
           
-          <div class="timeline-divider">Dia do casamento</div>
+          <div class="timeline-divider">DIA DO CASAMENTO</div>
           
           <div class="timeline-item">
             <div class="timeline-date">22/11</div>
@@ -487,12 +538,12 @@
         <p>Para ajudar na escolha do visual perfeito para nosso casamento, preparamos algumas sugestões:</p>
         
         <div class="dress-code-images">
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/vXjCHus.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/WvknmUJ.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/wf6UsaT.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/wu7ryrY.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/L6eKwxl.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/5YEUmem.jpg');"></div>
+          <div class="dress-code-image" style="background-image: url('https://i.imgur.com/vXjCHus.jpg');"></div>
+          <div class="dress-code-image" style="background-image: url('https://i.imgur.com/WvknmUJ.jpg');"></div>
+          <div class="dress-code-image" style="background-image: url('https://i.imgur.com/wf6UsaT.jpg');"></div>
+          <div class="dress-code-image" style="background-image: url('https://i.imgur.com/wu7ryrY.jpg');"></div>
+          <div class="dress-code-image" style="background-image: url('https://i.imgur.com/L6eKwxl.jpg');"></div>
+          <div class="dress-code-image" style="background-image: url('https://i.imgur.com/5YEUmem.jpg');"></div>
         </div>
         
         <p><em>Estilo sugerido: elegante praiano (trajes leves e confortáveis para o clima de Paraty)</em></p>

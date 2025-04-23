@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Izabela & Lucas - Casamento 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #5a7d5a;
+      --secondary-color: #f8f1e9;
+      --accent-color: #d4b483;
+      --text-color: #333;
+      --light-text: #f8f8f8;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .overlay {
+      background-color: rgba(248, 241, 233, 0.9);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 2rem 0;
+      position: relative;
+    }
+
+    .couple-names {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4.5rem;
+      color: var(--primary-color);
+      margin: 0;
+      line-height: 1;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .date-location {
+      font-size: 1.3rem;
+      color: var(--primary-color);
+      font-weight: 400;
+      margin-top: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .header-divider {
+      width: 150px;
+      height: 2px;
+      background: var(--accent-color);
+      margin: 1.5rem auto;
+      opacity: 0.7;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.8rem;
+      margin: 1.5rem 0;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    h3 {
+      color: var(--primary-color);
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      margin: 10px 8px;
+      text-align: center;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .button:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 3rem 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem 0;
+      color: var(--primary-color);
+      position: relative;
+    }
+
+    .signature {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-text {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Countdown Timer */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+      gap: 15px;
+    }
+
+    .countdown-item {
+      text-align: center;
+      background: rgba(255,255,255,0.7);
+      padding: 10px;
+      border-radius: 8px;
+      min-width: 70px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .countdown-number {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .countdown-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-color);
+    }
+
+    /* Timeline Style */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: var(--accent-color);
+      top: 0;
+      bottom: 0;
+      left: 50px;
+      margin-left: -1px;
+    }
+
+    .timeline-item {
+      padding: 10px 0 10px 70px;
+      position: relative;
+    }
+
+    .timeline-date {
+      position: absolute;
+      left: 0;
+      width: 93px;
+      text-align: right;
+      padding-right: 15px;
+      padding-top: 15px;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .timeline-content {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 15px;
+      width: 680px;
+      left: 35px;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      left: -8px;
+      top: 15px;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      border: 3px solid var(--accent-color);
+    }
+
+    .timeline-title {
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 5px;
+      padding-left: 10px;
+      font-size: 1.1rem;
+    }
+
+    .timeline-divider {
+      font-weight: bold;
+      text-transform: uppercase;
+      color: var(--primary-color);
+      margin: 20px 0 10px 0;
+      padding-left: 70px;
+      position: relative;
+    }
+
+    .timeline-divider::before {
+      content: '';
+      position: absolute;
+      left: 50px;
+      top: 50%;
+      width: 20px;
+      height: 2px;
+      background-color: var(--accent-color);
+      transform: translateX(-100%);
+    }
+
+    /* Carrossel de Trajes */
+    .dress-code {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .dress-code-images {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 15px;
+      padding: 15px 0;
+      margin: 1rem 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .dress-code-image {
+      scroll-snap-align: start;
+      flex: 0 0 auto;
+      width: 200px;
+      height: 300px;
+      border-radius: 8px;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    /* Seção de Presentes */
+    .gifts {
+      text-align: center;
+      background: rgba(255,255,255,0.7);
+      padding: 2rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+    }
+
+    .gifts-message {
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .qr-code {
+      width: 150px;
+      height: 150px;
+      margin: 1rem auto;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .qr-code img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .couple-names {
+        font-size: 3rem;
+      }
+      .date-location {
+        font-size: 1.1rem;
+      }
+      main {
+        padding: 1.5rem;
+      }
+      .button {
+        padding: 10px 20px;
+        margin: 8px 0;
+        width: 100%;
+      }
+      .countdown {
+        gap: 8px;
+      }
+      .countdown-item {
+        min-width: 60px;
+      }
+      .timeline::before {
+        left: 40px;
+      }
+      .timeline-item {
+        padding-left: 60px;
+      }
+      .timeline-date {
+        width: 60px;
+        font-size: 0.9rem;
+      }
+      .timeline-divider {
+        padding-left: 60px;
+      }
+      .dress-code-image {
+        width: 180px;
+        height: 270px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>
+      <h1 class="couple-names">Izabela & Lucas</h1>
+      <div class="header-divider"></div>
+      <p class="date-location">22 DE NOVEMBRO DE 2025 · PARATY - RJ</p>
+      
+      <!-- Countdown Timer -->
+      <div class="countdown">
+        <div class="countdown-item">
+          <div class="countdown-number" id="days">00</div>
+          <div class="countdown-label">Dias</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="hours">00</div>
+          <div class="countdown-label">Horas</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="minutes">00</div>
+          <div class="countdown-label">Minutos</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="seconds">00</div>
+          <div class="countdown-label">Segundos</div>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+      <section>
+        <h2>Boas-vindas</h2>
+        <p>Você está oficialmente convidado para testemunhar e celebrar o nosso amor sob o sol de Paraty! Preparado para uma festa inesquecível de casamento com muita diversão e risadas.</p>
+        <p>Contamos com você para fazer parte deste capítulo especial das nossas vidas!</p>
+      </section>
+      
+      <section>
+        <h2>Nossa Semana de Festa</h2>
+        
+        <div class="timeline">
+          <div class="timeline-divider">Partiu Paraty</div>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">19/11</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Saída de Campo Grande (CG)</div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">20/11</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Saída de Três Lagoas (TL)</div>
+            </div>
+          </div>
+          
+          <div class="timeline-divider">Boas-vindas</div>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">20/11</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Chegada a Paraty</div>
+            </div>
+          </div>
+          
+          <div class="timeline-divider">Praia</div>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">21/11</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Despedida de união estável</div>
+            </div>
+          </div>
+          
+          <div class="timeline-divider">Dia do casamento</div>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">22/11</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Chegou o grande dia!</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">10h</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Coquetel de recepção</div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">11h</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Cerimônia</div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">13h</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Almoço</div>
+            </div>
+          </div>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">-</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Festa</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <div class="button-container">
+        <a href="https://maps.app.goo.gl/3UZWyFkKsVJEUVTXA" target="_blank" class="button">Como chegar</a>
+        <a href="https://forms.gle/AQCNpjCQ4GJsFQva7" target="_blank" class="button">Confirmar presença</a>
+      </div>
+      
+      <!-- Seção de Dicas de Traje -->
+      <section class="dress-code">
+        <h2>Dicas de Traje</h2>
+        <p>Para ajudar na escolha do visual perfeito para nosso casamento, preparamos algumas sugestões:</p>
+        
+        <div class="dress-code-images">
+          <div class="dress-code-image" style="background-image: url('https://imgur.com/vXjCHus.jpg');"></div>
+          <div class="dress-code-image" style="background-image: url('https://imgur.com/WvknmUJ.jpg');"></div>
+          <div class="dress-code-image" style="background-image: url('https://imgur.com/wf6UsaT.jpg');"></div>
+          <div class="dress-code-image" style="background-image: url('https://imgur.com/wu7ryrY.jpg');"></div>
+          <div class="dress-code-image" style="background-image: url('https://imgur.com/L6eKwxl.jpg');"></div>
+          <div class="dress-code-image" style="background-image: url('https://imgur.com/5YEUmem.jpg');"></div>
+        </div>
+        
+        <p><em>Estilo sugerido: elegante praiano (trajes leves e confortáveis para o clima de Paraty)</em></p>
+      </section>
+      
+      <!-- Seção de Presentes -->
+      <section class="gifts">
+        <h2>Lista de Presentes</h2>
+        <p class="gifts-message">"Graças a Deus já temos tudo o que precisamos em nossa casa. Por isso, em vez de presentes físicos, aceitaremos com gratidão qualquer valor como forma de presente."</p>
+        
+        <p>Para contribuir, basta escanear o QR code abaixo:</p>
+        
+        <div class="qr-code">
+          <!-- QR Code genérico - você pode substituir pela sua chave PIX depois -->
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=PIX_DO_CASAL_IZA_LUCAS" alt="QR Code para presente">
+        </div>
+        
+        <p><small>Você será direcionado para nossa chave PIX. Muito obrigado pelo carinho!</small></p>
+      </section>
+      
+      <section>
+        <h2>Informações Úteis</h2>
+        <h3>Condução</h3>
+        <p>Vamos sair de CG dia 19/11 à noite, e seguir viagem a partir de Três Lagoas no dia 20/11. Quem quiser ir de comboio conosco, fique à vontade.</p>
+        <p>Sugerimos que coloquem a TAG SEM PARAR que agiliza bastante nos pedágios. Cuidado com a serra de Cunha - desça com o freio motor, tenha paciência e aproveite a vista!</p>
+        
+        <h3>Hospedagem</h3>
+        <p>Temos indicações de casas no Airbnb com bons preços. Sugerimos que reserve com antecedência, pois os valores aumentam conforme a data se aproxima.</p>
+        
+        <h3>Dúvidas</h3>
+        <p>Precisa de dicas sobre estrada, valores de pedágios, melhores rotas, onde abastecer ou onde parar para comer? Estamos à disposição para ajudar!</p>
+      </section>
+    </main>
+    
+    <footer>
+      <p class="signature">Izabela & Lucas</p>
+      <p class="footer-text">Com amor, para vocês que fazem parte da nossa história</p>
+    </footer>
+  </div>
+
+  <script>
+    // Countdown Timer
+    function updateCountdown() {
+      const weddingDate = new Date('November 22, 2025 10:00:00').getTime();
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+      
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+      document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+    }
+    
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>

@@ -342,6 +342,25 @@
       max-height: 100%;
     }
 
+    .pix-button {
+      display: block;
+      margin: 15px auto 0;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+  
+    .pix-button:hover {
+      background-color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
     /* Ajustes para telas médias */
     @media (max-width: 768px) {
       .timeline::before {
@@ -466,7 +485,7 @@
     <main>
       <section>
         <h2>Boas-vindas</h2>
-        <p>Você está oficialmente convidado para testemunhar e celebrar o nosso amor sob o sol de Paraty! Preparado para uma festa inesquecível de casamento com muita diversão e risadas.</p>
+        <p>Você está oficialmente convidado para testemunhar e celebrar o nosso amor sob o sol de Paraty! Preparados para uma festa inesquecível de casamento com muita diversão e risadas?.</p>
         <p>Contamos com você para fazer parte deste capítulo especial das nossas vidas!</p>
       </section>
       
@@ -557,11 +576,21 @@
         <h2>Dicas de Traje</h2>
         <p>Para ajudar na escolha do visual perfeito para nosso casamento, preparamos algumas sugestões:</p>
         
+        <h3>Mulheres</h3>
+
         <div class="dress-code-images">
+          <div class="dress-code-image" style="background-image: url('https://imgur.com/zphdigQ.jpg');"></div>
+          <div class="dress-code-image" style="background-image: url('https://imgur.com/8nBcuwj.jpg');"></div>
           <div class="dress-code-image" style="background-image: url('https://i.imgur.com/vXjCHus.jpg');"></div>
           <div class="dress-code-image" style="background-image: url('https://i.imgur.com/WvknmUJ.jpg');"></div>
           <div class="dress-code-image" style="background-image: url('https://i.imgur.com/wf6UsaT.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://i.imgur.com/wu7ryrY.jpg');"></div>
+        </div>
+
+        <h3>Homens</h3>
+
+        <div class="dress-code-images">
+          <div class="dress-code-image" style="background-image: url('https://imgur.com/pyTQI8k.jpg');"></div>
+          <div class="dress-code-image" style="background-image: url('https://imgur.com/iys9VS5.jpg');"></div>
           <div class="dress-code-image" style="background-image: url('https://i.imgur.com/L6eKwxl.jpg');"></div>
           <div class="dress-code-image" style="background-image: url('https://i.imgur.com/5YEUmem.jpg');"></div>
         </div>
@@ -578,8 +607,12 @@
         
         <div class="qr-code">
           <!-- QR Code genérico - você pode substituir pela sua chave PIX depois -->
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=PIX_DO_CASAL_IZA_LUCAS" alt="QR Code para presente">
+          <img src="https://imgur.com/L60PjA7.jpg" alt="QR Code para presente">
         </div>
+        
+        <!-- Botão PIX Copia e Cola - Adicione esta parte -->
+        <button id="copyPixButton" class="pix-button">PIX Copia e Cola</button>
+        <p id="copyFeedback" style="display:none; color: var(--primary-color); margin-top: 5px;">Chave PIX copiada!</p>
         
         <p><small>Você será direcionado para nossa chave PIX. Muito obrigado pelo carinho!</small></p>
       </section>
@@ -605,7 +638,26 @@
   </div>
 
   <script>
-    // Countdown Timer
+    // Código do botão PIX (mantido igual)
+    document.getElementById('copyPixButton').addEventListener('click', function() {
+      const pixKey = "00020126330014BR.GOV.BCB.PIX0111051729961505204000053039865802BR5923Lucas Capatini Ernandes6009SAO PAULO621405101kKOG9jnHe6304CD75"; 
+      
+      const tempInput = document.createElement('input');
+      tempInput.value = pixKey;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      
+      const feedback = document.getElementById('copyFeedback');
+      feedback.style.display = 'block';
+      
+      setTimeout(function() {
+        feedback.style.display = 'none';
+      }, 3000);
+    }); // Fecha o evento do botão PIX aqui
+  
+    // Countdown Timer (FORA do evento do botão PIX)
     function updateCountdown() {
       const weddingDate = new Date('November 22, 2025 10:00:00').getTime();
       const now = new Date().getTime();

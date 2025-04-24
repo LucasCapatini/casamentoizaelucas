@@ -479,11 +479,64 @@
       margin: 15px auto;
       display: block;
       box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .trajeto-image:hover {
+      transform: scale(1.02);
     }
 
     .map-container {
       text-align: center;
       margin: 25px 0;
+    }
+
+    /* Modal para imagem ampliada */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      overflow: auto;
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 90%;
+      max-width: 800px;
+      max-height: 90vh;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: zoom 0.3s;
+    }
+
+    @keyframes zoom {
+      from {transform: translate(-50%, -50%) scale(0.9)}
+      to {transform: translate(-50%, -50%) scale(1)}
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .close:hover {
+      color: var(--accent-color);
     }
 
     /* Ajustes para telas médias */
@@ -517,6 +570,15 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+      }
+
+      .modal-content {
+        width: 95%;
+      }
+
+      .close {
+        font-size: 30px;
+        right: 20px;
       }
     }
 
@@ -779,8 +841,7 @@
           <p>O Trajeto que faremos será o da imagem abaixo, constando também um link logo em seguida para o Google Maps já com o trajeto:</p>
 
           <div class="map-container">
-            <!-- Substitua pelo caminho da sua imagem do trajeto -->
-            <img src="https://imgur.com/Bz0qi8V.jpg" alt="Trajeto para Paraty" class="trajeto-image">
+            <img src="https://imgur.com/Bz0qi8V.jpg" alt="Trajeto para Paraty" class="trajeto-image" id="trajetoImage">
             <a href="https://maps.app.goo.gl/XXZyuGQ64ameJ6zLA" target="_blank" class="button" style="margin: 15px auto; display: block; max-width: 300px;">
               Ver trajeto no Google Maps
             </a>
@@ -820,7 +881,6 @@
           <p>Selecionamos algumas opções de hospedagem próximas ao local da festa para seu conforto:</p>
           
           <div class="button-container" style="margin: 20px 0;">
-            <!-- Substitua pelo link real da sua planilha -->
             <a href="LINK_DA_PLANILHA" target="_blank" class="button">
               Ver opções de hospedagem no Airbnb
             </a>
@@ -864,6 +924,12 @@
     </footer>
   </div>
 
+  <!-- Modal para imagem ampliada -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
   <script>
     // Código do botão PIX
     document.getElementById('copyPixButton').addEventListener('click', function() {
@@ -903,6 +969,27 @@
     
     updateCountdown();
     setInterval(updateCountdown, 1000);
+
+    // Modal para imagem do trajeto
+    const modal = document.getElementById("imageModal");
+    const img = document.getElementById("trajetoImage");
+    const modalImg = document.getElementById("modalImage");
+    const span = document.getElementsByClassName("close")[0];
+
+    img.onclick = function() {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+    }
+
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    modal.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
   </script>
 </body>
 </html>

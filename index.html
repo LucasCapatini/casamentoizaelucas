@@ -410,6 +410,7 @@
     }
 
     .small-note {
+      text-align: center;
       font-size: 0.85rem;
       color: #666;
       margin-top: 5px;
@@ -599,6 +600,18 @@
       .button-container {
         flex-direction: column;
         align-items: center;
+        margin: 2rem 0;
+        padding: 0 15px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .button-container .button {
+        width: 100%;
+        max-width: 300px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        white-space: nowrap;
       }
       
       .button {
@@ -627,6 +640,21 @@
       .map-container .button {
         width: 100%;
         max-width: 300px;
+        margin: 15px auto;
+        display: block;
+      }
+
+      .info-card .button-container {
+        margin: 20px auto;
+        width: 100%;
+        max-width: 300px;
+        padding: 0;
+      }
+      
+      .info-card .button {
+        white-space: normal;
+        line-height: 1.4;
+        padding: 12px 15px;
       }
 
       .countdown {
@@ -792,17 +820,30 @@
       </section>
       
       <div class="button-container">
-        <a href="https://maps.app.goo.gl/3UZWyFkKsVJEUVTXA" target="_blank" class="button">Como chegar</a>
         <a href="https://forms.gle/AQCNpjCQ4GJsFQva7" target="_blank" class="button">Confirmar presença</a>
       </div>
       
       <!-- Seção de Dicas de Traje -->
+      <!-- Seção de Dicas de Traje -->
       <section class="dress-code">
         <h2>Dicas de Traje</h2>
-        <p>Para ajudar na escolha do visual perfeito para nosso casamento, preparamos algumas sugestões:</p>
         
-        <h3>Mulheres</h3>
+        <div class="info-card">
+          <p><strong>Novembro em Paraty é quente e chuve. Portanto não esqueçam de levar:</strong></p>
+          <ul class="styled-list">
+            <li>Roupas leves e frescas</li>
+            <li>Protetor solar</li>
+            <li>Repelente</li>
+          </ul>
 
+          <p><strong>Para a cerimônia, caprichem no look, mas lembrem:</strong></p>
+          <ul class="styled-list">
+            <li>Será pela manhã e em uma casa próxima a Serra.</li>
+            <li>Priorizem o conforto! O importante é que todos estejam à vontade. ♥</li>
+          </ul>
+        </div>
+
+        <h3>Mulheres</h3>
         <div class="dress-code-images">
           <div class="dress-code-image" style="background-image: url('https://imgur.com/zphdigQ.jpg');"></div>
           <div class="dress-code-image" style="background-image: url('https://imgur.com/8nBcuwj.jpg');"></div>
@@ -812,7 +853,6 @@
         </div>
 
         <h3>Homens</h3>
-
         <div class="dress-code-images">
           <div class="dress-code-image" style="background-image: url('https://imgur.com/pyTQI8k.jpg');"></div>
           <div class="dress-code-image" style="background-image: url('https://imgur.com/iys9VS5.jpg');"></div>
@@ -869,9 +909,11 @@
 
           <div class="map-container">
             <img src="https://imgur.com/Bz0qi8V.jpg" alt="Trajeto para Paraty" class="trajeto-image" id="trajetoImage">
-            <a href="https://maps.app.goo.gl/XXZyuGQ64ameJ6zLA" target="_blank" class="button" style="margin: 15px auto; display: block; max-width: 300px;">
-              Trajeto no Maps
-            </a>
+            <div style="width: 100%; padding: 0 15px; box-sizing: border-box;">
+              <a href="https://maps.app.goo.gl/XXZyuGQ64ameJ6zLA" target="_blank" class="button" style="margin: 15px auto; display: block; max-width: 300px; width: 100%;">
+                Trajeto no Maps
+              </a>
+            </div>
           </div>
           
           <h4 class="section-subtitle">Paradas programadas:</h4>
@@ -907,8 +949,8 @@
           <h3>Hospedagem</h3>
           <p>Selecionamos algumas opções de hospedagem próximas ao local da festa para seu conforto:</p>
           
-          <div class="button-container" style="margin: 20px 0;">
-            <a href="LINK_DA_PLANILHA" target="_blank" class="button">
+          <div class="button-container" style="margin: 20px auto; max-width: 300px; width: 100%; padding: 0 15px;">
+            <a href="LINK_DA_PLANILHA" target="_blank" class="button" style="white-space: normal; line-height: 1.4;">
               Ver opções de hospedagem no Airbnb
             </a>
           </div>

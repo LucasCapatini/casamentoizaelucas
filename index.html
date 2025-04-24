@@ -279,11 +279,23 @@
       padding: 15px 0;
       margin: 1rem 0;
       -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-color) var(--secondary-color);
     }
 
     .dress-code-images::-webkit-scrollbar {
-      display: none;
+      height: 8px;
+    }
+
+    .dress-code-images::-webkit-scrollbar-track {
+      background: var(--secondary-color);
+      border-radius: 10px;
+    }
+
+    .dress-code-images::-webkit-scrollbar-thumb {
+     background-color: var(--accent-color);
+     border-radius: 10px;
+     border: 2px solid var(--secondary-color);
     }
 
     .dress-code-image {
@@ -411,6 +423,14 @@
       .dress-code-image {
         width: 160px;
         height: 240px;
+      }
+
+      .dress-code-images {
+        padding-bottom: 10px; /* Dar espaço para a scrollbar */
+      }
+
+      .dress-code-images::-webkit-scrollbar {
+        height: 6px; /* Scrollbar mais fina em mobile */
       }
     }
   </style>

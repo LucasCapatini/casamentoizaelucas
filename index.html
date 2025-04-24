@@ -361,6 +361,131 @@
       transform: translateY(-2px);
     }
 
+    /* Novos estilos para a seção de Informações Úteis */
+    .info-card {
+      background: rgba(255,255,255,0.8);
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .section-subtitle {
+      color: var(--primary-color);
+      font-size: 1.1rem;
+      margin: 20px 0 10px;
+      position: relative;
+      padding-left: 15px;
+    }
+
+    .section-subtitle::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      height: 60%;
+      width: 4px;
+      background: var(--accent-color);
+      transform: translateY(-50%);
+    }
+
+    .styled-list {
+      padding-left: 20px;
+      list-style-type: none;
+    }
+
+    .styled-list li {
+      margin-bottom: 12px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .styled-list li::before {
+      content: '•';
+      color: var(--accent-color);
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: -3px;
+    }
+
+    .small-note {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 5px;
+      padding-left: 15px;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .tip-card {
+      background: var(--secondary-color);
+      padding: 15px;
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .tip-icon {
+      font-size: 1.5rem;
+      margin-top: 2px;
+    }
+
+    .contact-points {
+      margin: 20px 0;
+      line-height: 1.8;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-name {
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .contact-link {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .contact-link:hover {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+
+    .trajeto-image {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
+      margin: 15px auto;
+      display: block;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .map-container {
+      text-align: center;
+      margin: 25px 0;
+    }
+
     /* Ajustes para telas médias */
     @media (max-width: 768px) {
       .timeline::before {
@@ -381,6 +506,17 @@
       
       .timeline-divider::before {
         left: 80px;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .tip-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
       }
     }
 
@@ -445,11 +581,11 @@
       }
 
       .dress-code-images {
-        padding-bottom: 10px; /* Dar espaço para a scrollbar */
+        padding-bottom: 10px;
       }
 
       .dress-code-images::-webkit-scrollbar {
-        height: 6px; /* Scrollbar mais fina em mobile */
+        height: 6px;
       }
     }
   </style>
@@ -606,28 +742,119 @@
         <p>Para contribuir, basta escanear o QR code abaixo:</p>
         
         <div class="qr-code">
-          <!-- QR Code genérico - você pode substituir pela sua chave PIX depois -->
           <img src="https://imgur.com/L60PjA7.jpg" alt="QR Code para presente">
         </div>
         
-        <!-- Botão PIX Copia e Cola - Adicione esta parte -->
         <button id="copyPixButton" class="pix-button">PIX Copia e Cola</button>
         <p id="copyFeedback" style="display:none; color: var(--primary-color); margin-top: 5px;">Chave PIX copiada!</p>
         
         <p><small>Você será direcionado para nossa chave PIX. Muito obrigado pelo carinho!</small></p>
       </section>
       
+      <!-- Seção de Informações Úteis - MODIFICADA -->
       <section>
         <h2>Informações Úteis</h2>
-        <h3>Condução</h3>
-        <p>Vamos sair de CG dia 19/11 à noite, e seguir viagem a partir de Três Lagoas no dia 20/11. Quem quiser ir de comboio conosco, fique à vontade.</p>
-        <p>Sugerimos que coloquem a TAG SEM PARAR que agiliza bastante nos pedágios. Cuidado com a serra de Cunha - desça com o freio motor, tenha paciência e aproveite a vista!</p>
         
-        <h3>Hospedagem</h3>
-        <p>Temos indicações de casas no Airbnb com bons preços. Sugerimos que reserve com antecedência, pois os valores aumentam conforme a data se aproxima.</p>
+        <div class="info-card">
+          <h3>Condução</h3>
+
+          <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+            <div style="width: 90px; text-align: right; padding-right: 15px; font-weight: 600; color: var(--primary-color);">
+              19/11
+            </div>
+            <div style="flex: 1;">
+              Início da viagem à noite, saindo de Campo Grande com pernoite em Três Lagoas
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: flex-start; margin-bottom: 25px;">
+            <div style="width: 90px; text-align: right; padding-right: 15px; font-weight: 600; color: var(--primary-color);">
+              20/11
+            </div>
+            <div style="flex: 1;">
+              Saída rumo a Paraty em comboio com vários carros
+            </div>
+          </div>
+          
+          <p>O Trajeto que faremos será o da imagem abaixo, constando também um link logo em seguida para o Google Maps já com o trajeto:</p>
+
+          <div class="map-container">
+            <!-- Substitua pelo caminho da sua imagem do trajeto -->
+            <img src="https://imgur.com/Bz0qi8V.jpg" alt="Trajeto para Paraty" class="trajeto-image">
+            <a href="https://maps.app.goo.gl/XXZyuGQ64ameJ6zLA" target="_blank" class="button" style="margin: 15px auto; display: block; max-width: 300px;">
+              Ver trajeto no Google Maps
+            </a>
+          </div>
+          
+          <h4 class="section-subtitle">Paradas programadas:</h4>
+          <ul class="styled-list">
+            <li>
+              <strong>Graal de Bauru:</strong> Parada ao amanhecer para abastecimento e café da manhã
+            </li>
+            <li>
+              <strong>Rod. Dom Pedro I:</strong> Parada para almoço com diversas opções de alimentação
+            </li>
+            <li>
+              <strong>Rod. Presidente Dutra (Aparecida):</strong> Último abastecimento antes da serra
+              <div class="small-note">
+                <em>Opção alternativa:</em> Restaurantes Frango Assado na Rod. Carvalho Pinto
+              </div>
+            </li>
+          </ul>
+          
+          <h4 class="section-subtitle">Dicas importantes:</h4>
+          <div class="tips-grid">
+            <div class="tip-card">
+              <div class="tip-icon">🚗</div>
+              <p>Instalar TAG de pedágio (Ex: Sem Parar) para economizar até 2 horas na viagem</p>
+            </div>
+            <div class="tip-card">
+              <div class="tip-icon">⛰️</div>
+              <p>Na descida da serra de Cunha-Paraty, ter paciência,utilizar freio motor e aproveitar a vista</p>
+            </div>
+          </div>
+        </div>
         
-        <h3>Dúvidas</h3>
-        <p>Precisa de dicas sobre estrada, valores de pedágios, melhores rotas, onde abastecer ou onde parar para comer? Estamos à disposição para ajudar!</p>
+        <div class="info-card" style="margin-top: 30px;">
+          <h3>Hospedagem</h3>
+          <p>Selecionamos algumas opções de hospedagem próximas ao local da festa para seu conforto:</p>
+          
+          <div class="button-container" style="margin: 20px 0;">
+            <!-- Substitua pelo link real da sua planilha -->
+            <a href="LINK_DA_PLANILHA" target="_blank" class="button">
+              Ver opções de hospedagem no Airbnb
+            </a>
+          </div>
+          
+          <p class="small-note">
+            <em>Observação:</em> Sugerimos reservar com antecedência para melhores valores
+          </p>
+        </div>
+        
+        <div class="info-card" style="margin-top: 30px; text-align: center;">
+          <h3>Dúvidas e Considerações</h3>
+          <p class="gifts-message">
+            Agradecemos por dedicarem seu tempo para estar conosco neste dia tão especial! 
+            Estamos à disposição para qualquer dúvida.
+          </p>
+          
+          <div class="contact-points">
+            <div>• Trajeto e rotas alternativas</div>
+            <div>• Valores estimados de pedágios e combustível</div>
+            <div>• Sugestões de hospedagem</div>
+          </div>
+          
+          <div class="contact-info">
+            <div class="contact-item">
+              <span class="contact-name">Lucas:</span>
+              <a href="tel:24999017640" class="contact-link">(24) 99901-7640</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-name">Izabela:</span>
+              <a href="tel:67999401101" class="contact-link">(67) 99940-1101</a>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     
@@ -638,7 +865,7 @@
   </div>
 
   <script>
-    // Código do botão PIX (mantido igual)
+    // Código do botão PIX
     document.getElementById('copyPixButton').addEventListener('click', function() {
       const pixKey = "00020126330014BR.GOV.BCB.PIX0111051729961505204000053039865802BR5923Lucas Capatini Ernandes6009SAO PAULO621405101kKOG9jnHe6304CD75"; 
       
@@ -655,9 +882,9 @@
       setTimeout(function() {
         feedback.style.display = 'none';
       }, 3000);
-    }); // Fecha o evento do botão PIX aqui
+    });
   
-    // Countdown Timer (FORA do evento do botão PIX)
+    // Countdown Timer
     function updateCountdown() {
       const weddingDate = new Date('November 22, 2025 10:00:00').getTime();
       const now = new Date().getTime();

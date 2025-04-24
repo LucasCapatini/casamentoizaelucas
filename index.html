@@ -595,13 +595,40 @@
       main {
         padding: 1.5rem;
       }
-      
-      .button {
-        padding: 10px 20px;
-        margin: 8px 0;
-        width: 100%;
+
+      .button-container {
+        flex-direction: column;
+        align-items: center;
       }
       
+      .button {
+        width: 100%;
+        max-width: 300px;
+        margin: 8px 0;
+      }
+      
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+  
+      .tip-card {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        padding: 12px;
+      }
+  
+      .tip-icon {
+        margin-right: 10px;
+        margin-top: 0;
+        font-size: 1.8rem;
+      }
+  
+      .map-container .button {
+        width: 100%;
+        max-width: 300px;
+      }
+
       .countdown {
         gap: 8px;
       }
@@ -843,7 +870,7 @@
           <div class="map-container">
             <img src="https://imgur.com/Bz0qi8V.jpg" alt="Trajeto para Paraty" class="trajeto-image" id="trajetoImage">
             <a href="https://maps.app.goo.gl/XXZyuGQ64ameJ6zLA" target="_blank" class="button" style="margin: 15px auto; display: block; max-width: 300px;">
-              Ver trajeto no Google Maps
+              Trajeto no Maps
             </a>
           </div>
           

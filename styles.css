@@ -695,3 +695,228 @@
       height: 6px;
     }
   }
+
+/* Styles for Modern Timeline */
+.modern-timeline-scroll {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px 10px;
+  gap: 15px;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: var(--accent-color) var(--secondary-color); /* For Firefox */
+  min-height: 280px; /* Or a suitable height to accommodate cards */
+}
+
+.modern-timeline-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.modern-timeline-scroll::-webkit-scrollbar-track {
+  background: var(--secondary-color);
+  border-radius: 10px;
+}
+
+.modern-timeline-scroll::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 10px;
+  border: 2px solid var(--secondary-color);
+}
+
+.event-card {
+  flex: 0 0 auto; /* Prevent shrinking, allow natural width */
+  width: 220px; /* Suitable width for the content */
+  background-color: #fff; /* Or var(--secondary-color) for better contrast */
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* Distribute content within the card */
+  min-height: 200px; /* Consistent minimum height */
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.event-icon {
+  font-size: 2rem; /* Adjust as needed */
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.event-icon::before {
+  content: '🎉'; /* Default placeholder icon */
+}
+
+.event-date {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.event-title {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  font-weight: 600; /* Bolder title */
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+/* Optional: Styles for divider cards if a specific class is used
+.event-card.event-card-divider {
+  background-color: var(--primary-color);
+  color: white;
+}
+.event-card.event-card-divider .event-title,
+.event-card.event-card-divider .event-date,
+.event-card.event-card-divider .event-icon {
+  color: white;
+}
+*/
+
+.add-to-calendar-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px; /* Space above the button */
+}
+
+.add-to-calendar-btn:hover {
+  background-color: var(--accent-color);
+}
+
+/* Enhanced Styles for Dicas de Traje Section */
+section.dress-code {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.dress-code-content-wrapper {
+  background-color: #ffffff; /* Opaque white for a clean grouped look */
+  border-radius: 10px;
+  padding: 25px; /* Increased padding */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  margin-top: 1.5rem;
+  border: 1px solid rgba(0,0,0,0.05); /* Subtle border */
+}
+
+.dress-code-content-wrapper .info-card {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 10px 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px dashed var(--accent-color); /* Visual separator */
+  padding-bottom: 1.5rem; /* Space after the separator */
+}
+
+.dress-code-content-wrapper h3 {
+  color: var(--primary-color);
+  font-size: 1.6rem; /* Slightly more prominent */
+  text-align: center; /* Centered for a more formal look */
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Great Vibes', cursive; /* Using the decorative font */
+}
+
+.dress-code-content-wrapper .dress-code-images {
+  margin-bottom: 1.5rem; /* Space after each carousel */
+}
+
+.dress-code-content-wrapper > p:last-of-type {
+  text-align: center;
+  color: var(--primary-color);
+  font-style: normal; /* Removing italic for this new look */
+  font-weight: 600;
+  margin-top: 2.5rem;
+  padding: 15px;
+  background-color: var(--secondary-color); /* Safer choice, as --accent-color-rgb is not defined */
+  border-radius: 8px;
+  border-top: 2px solid var(--accent-color);
+}
+
+/* Styles for Enhanced Informações Úteis Section */
+.map-container iframe {
+  width: 100%; /* Responsive width */
+  height: 400px; /* Adjust height as desired */
+  border-radius: 8px; /* Match site's border radius theme */
+  margin-bottom: 15px; /* Space before the "Trajeto no Maps" button */
+}
+
+.stop-points-container {
+  margin-top: 10px; /* Space after the "Paradas programadas:" heading */
+}
+
+.stop-point-card {
+  background-color: var(--secondary-color); /* Light background */
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px; /* Space between cards */
+  display: flex; /* For icon and text alignment */
+  align-items: flex-start; /* Align items to the top */
+  border: 1px solid rgba(0,0,0,0.05); /* Subtle border */
+}
+
+.stop-icon {
+  font-size: 1.8rem; /* Icon size */
+  color: var(--primary-color);
+  margin-right: 15px; /* Space between icon and text */
+  margin-top: 3px; /* Adjust vertical alignment if needed */
+}
+
+.stop-title {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.stop-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.stop-description .small-note {
+  font-size: 0.8rem; /* Make it slightly smaller */
+  color: #555;      /* Darker grey */
+  margin-top: 8px;
+  padding-left: 0; /* Override existing if any */
+  text-align: left; /* Override existing if any */
+}
+
+/* Enhanced tip-card styling within the specific info-card for Condução */
+.info-card .tips-grid .tip-card {
+  background-color: var(--primary-color); /* Change background for emphasis */
+  color: var(--light-text); /* Light text for contrast */
+  padding: 20px; /* Increase padding */
+  border: none; /* Remove border if any */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Add a bit more shadow */
+}
+
+.info-card .tips-grid .tip-card .tip-icon {
+  color: var(--accent-color); /* Change icon color for contrast */
+  font-size: 1.8rem; /* Ensure icon size is good */
+}
+
+.info-card .tips-grid .tip-card p {
+  color: var(--light-text); /* Ensure paragraph text is also light */
+  font-size: 0.95rem;
+}
+
+/* Adjustments for section subtitles within info-cards if needed */
+.info-card h4.section-subtitle {
+    margin-top: 25px; /* Ensure enough space above these subtitles */
+    margin-bottom: 15px; /* Space below subtitle before content */
+}

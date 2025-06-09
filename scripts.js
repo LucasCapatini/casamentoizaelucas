@@ -37,23 +37,10 @@ document.getElementById('copyPixButton').addEventListener('click', function() {
   updateCountdown();
   setInterval(updateCountdown, 1000);
   
-  // Modal para imagem do trajeto
-  const modal = document.getElementById("imageModal");
-  const img = document.getElementById("trajetoImage");
-  const modalImg = document.getElementById("modalImage");
-  const span = document.getElementsByClassName("close")[0];
-  
-  img.onclick = function() {
-    modal.style.display = "block";
-    modalImg.src = this.src;
-  }
-  
-  span.onclick = function() {
-    modal.style.display = "none";
-  }
-  
-  modal.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
+// Add to Calendar button functionality (Placeholder)
+const addToCalendarButtons = document.querySelectorAll('.add-to-calendar-btn');
+addToCalendarButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    alert('Em breve você poderá adicionar este evento ao seu calendário!');
+  });
+});

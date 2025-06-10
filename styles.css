@@ -797,6 +797,23 @@
   background-color: var(--accent-color);
 }
 
+/* Styles for Header Event Cards in Timeline */
+.event-card.event-card-header {
+  justify-content: center;
+  align-items: center;
+}
+
+.event-card.event-card-header .event-icon {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.event-card.event-card-header .event-title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
 /* Enhanced Styles for Dicas de Traje Section */
 section.dress-code {
   padding-top: 2rem;
@@ -879,7 +896,7 @@ section.dress-code {
   font-weight: 600;
   color: var(--primary-color);
   font-size: 1.1rem;
-  margin-bottom: 5px;
+  margin-bottom: 8px; /* Increased from 5px */
 }
 
 .stop-description {

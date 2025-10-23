@@ -10,12 +10,97 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Loading Screen -->
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loading-content">
+      <h1 class="loading-names">Izabela & Lucas</h1>
+      <div class="loading-divider"></div>
+      <p class="loading-date">22 DE NOVEMBRO DE 2025</p>
+      <div class="loading-spinner"></div>
+    </div>
+  </div>
+
+  <!-- Botão Voltar ao Topo -->
+  <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- Scroll Spy Navigation -->
+  <nav id="scrollSpyNav" class="scroll-spy-nav">
+    <a href="#welcome" class="nav-item active" data-section="welcome">
+      <span class="nav-dot"></span>
+      <span class="nav-label">Boas-vindas</span>
+    </a>
+    <a href="#timeline" class="nav-item" data-section="timeline">
+      <span class="nav-dot"></span>
+      <span class="nav-label">Programação</span>
+    </a>
+    <a href="#dresscode" class="nav-item" data-section="dresscode">
+      <span class="nav-dot"></span>
+      <span class="nav-label">Traje</span>
+    </a>
+    <a href="#gifts" class="nav-item" data-section="gifts">
+      <span class="nav-dot"></span>
+      <span class="nav-label">Presentes</span>
+    </a>
+    <a href="#info" class="nav-item" data-section="info">
+      <span class="nav-dot"></span>
+      <span class="nav-label">Informações</span>
+    </a>
+  </nav>
+
   <div class="overlay">
+    <!-- Menu Hambúrguer -->
+    <button id="hamburgerBtn" class="hamburger-btn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Menu Mobile -->
+    <nav id="mobileMenu" class="mobile-menu">
+      <button id="closeMenuBtn" class="close-menu-btn">&times;</button>
+      <ul class="mobile-menu-list">
+        <li><a href="#welcome" class="mobile-menu-item">Boas-vindas</a></li>
+        <li><a href="#timeline" class="mobile-menu-item">Programação</a></li>
+        <li><a href="#dresscode" class="mobile-menu-item">Dicas de Traje</a></li>
+        <li><a href="#gifts" class="mobile-menu-item">Presentes</a></li>
+        <li><a href="#info" class="mobile-menu-item">Informações</a></li>
+      </ul>
+    </nav>
+
     <header>
       <h1 class="couple-names">Izabela & Lucas</h1>
       <div class="header-divider"></div>
       <p class="date-location">22 DE NOVEMBRO DE 2025 · PARATY - RJ</p>
       
+      <!-- Botões Adicionar ao Calendário -->
+      <div class="calendar-buttons">
+        <button id="addToCalendar" class="calendar-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Adicionar ao Calendário
+        </button>
+      </div>
+
+      <div id="calendarDropdown" class="calendar-dropdown" style="display: none;">
+        <a href="#" id="googleCalendar" class="calendar-option">
+          Google Calendar
+        </a>
+        <a href="#" id="outlookCalendar" class="calendar-option">
+          Outlook
+        </a>
+        <a href="#" id="appleCalendar" class="calendar-option">
+          Apple Calendar
+        </a>
+      </div>
+
       <!-- Countdown Timer -->
       <div class="countdown">
         <div class="countdown-item">
@@ -38,13 +123,13 @@
     </header>
     
     <main>
-      <section>
+      <section id="welcome" class="fade-in-up">
         <h2>Boas-vindas</h2>
         <p>Você está oficialmente convidado para testemunhar e celebrar o nosso amor sob o sol de Paraty! Preparados para uma festa inesquecível de casamento com muita diversão e risadas?.</p>
         <p>Contamos com você para fazer parte deste capítulo especial das nossas vidas!</p>
       </section>
-      
-      <section>
+
+      <section id="timeline" class="fade-in-up">
         <h2>Nossa Semana de Festa</h2>
         
         <div class="timeline">
@@ -120,13 +205,13 @@
           </div>
         </div>
       </section>
-      
-      <div class="button-container">
+
+      <div class="button-container fade-in">
         <a href="https://forms.gle/AQCNpjCQ4GJsFQva7" target="_blank" class="button">Confirmar presença</a>
       </div>
-      
+
       <!-- Seção de Dicas de Traje -->
-      <section class="dress-code">
+      <section id="dresscode" class="dress-code fade-in-up">
         <h2>Dicas de Traje</h2>
         
         <div class="info-card">
@@ -146,47 +231,47 @@
 
         <h3>Mulheres</h3>
         <div class="dress-code-images">
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/zphdigQ.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/8nBcuwj.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://i.imgur.com/vXjCHus.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://i.imgur.com/WvknmUJ.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://i.imgur.com/wf6UsaT.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/dc7NKO3.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/Ld1erJm.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/707zD3k.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/snOQxgE.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/Hm6OA63.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/jVJzHxP.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/XdUSVJV.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/uysBD1O.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/3TKLOTv.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/9O4RE1u.jpg');"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/zphdigQ.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/8nBcuwj.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://i.imgur.com/vXjCHus.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://i.imgur.com/WvknmUJ.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://i.imgur.com/wf6UsaT.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/dc7NKO3.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/Ld1erJm.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/707zD3k.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/snOQxgE.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/Hm6OA63.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/jVJzHxP.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/XdUSVJV.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/uysBD1O.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/3TKLOTv.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/9O4RE1u.jpg"></div>
         </div>
 
         <h3>Homens</h3>
         <div class="dress-code-images">
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/pyTQI8k.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/iys9VS5.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://i.imgur.com/L6eKwxl.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://i.imgur.com/5YEUmem.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/Dtac2aR.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/pFnlsya.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/k90J7Zw.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/imJgmMq.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/H6CH2y0.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/K9Qf9eX.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/oWfDDkH.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/jDjjmlo.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/nSymVG7.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/H5NJlxw.jpg');"></div>
-          <div class="dress-code-image" style="background-image: url('https://imgur.com/bUWzhBD.jpg');"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/pyTQI8k.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/iys9VS5.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://i.imgur.com/L6eKwxl.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://i.imgur.com/5YEUmem.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/Dtac2aR.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/pFnlsya.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/k90J7Zw.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/imJgmMq.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/H6CH2y0.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/K9Qf9eX.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/oWfDDkH.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/jDjjmlo.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/nSymVG7.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/H5NJlxw.jpg"></div>
+          <div class="dress-code-image lazy-bg" data-bg="https://imgur.com/bUWzhBD.jpg"></div>
         </div>
         
         <p><em>Estilo sugerido: elegante praiano (trajes leves e confortáveis para o clima de Paraty)</em></p>
       </section>
-      
+
       <!-- Seção de Presentes -->
-      <section class="gifts">
+      <section id="gifts" class="gifts fade-in-up">
         <h2>Lista de Presentes</h2>
         <p class="gifts-message">"Graças a Deus já temos tudo o que precisamos em nossa casa. Por isso, em vez de presentes físicos, aceitaremos com gratidão qualquer valor como forma de presente."</p>
         
@@ -197,13 +282,29 @@
         </div>
         
         <button id="copyPixButton" class="pix-button">PIX Copia e Cola</button>
-        <p id="copyFeedback" style="display:none; color: var(--primary-color); margin-top: 5px;">Chave PIX copiada!</p>
-        
+
         <p><small>Você será direcionado para nossa chave PIX. Muito obrigado pelo carinho!</small></p>
       </section>
-      
+
+      <!-- Modal de Agradecimento PIX -->
+      <div id="pixThanksModal" class="pix-modal">
+        <div class="pix-modal-content">
+          <button class="pix-modal-close">&times;</button>
+          <div class="pix-modal-icon">🎁</div>
+          <h2>Chave PIX Copiada!</h2>
+          <p>Muito obrigado pelo carinho e generosidade!</p>
+          <p class="pix-modal-message">
+            Sua presença já é o maior presente, mas agradecemos imensamente por querer contribuir para o início da nossa jornada juntos. ♥
+          </p>
+          <div class="pix-modal-hearts">
+            <span>💚</span><span>💛</span><span>💚</span>
+          </div>
+          <p class="pix-modal-signature">Com amor,<br><strong>Izabela & Lucas</strong></p>
+        </div>
+      </div>
+
       <!-- Seção de Informações Úteis -->
-      <section>
+      <section id="info" class="fade-in-up">
         <h2>Informações Úteis</h2>
         
         <div class="info-card">
@@ -234,6 +335,27 @@
             <div style="width: 100%; padding: 0 15px; box-sizing: border-box;">
               <a href="https://maps.app.goo.gl/XXZyuGQ64ameJ6zLA" target="_blank" class="button" style="margin: 15px auto; display: block; max-width: 300px; width: 100%;">
                 Trajeto no Maps
+              </a>
+            </div>
+          </div>
+
+          <h4 class="section-subtitle" style="margin-top: 30px;">Local da Cerimônia:</h4>
+          <div class="interactive-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3675.9784627089844!2d-44.74813628!3d-23.227805599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjPCsDEzJzQwLjEiUyA0NMKwNDQnNTMuMyJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+              width="100%"
+              height="400"
+              style="border:0; border-radius: 8px;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <p class="small-note" style="margin-top: 10px; text-align: center;">
+              <em>Local da Cerimônia - Paraty, RJ · 23°13'40.1"S 44°44'53.3"W</em>
+            </p>
+            <div style="width: 100%; padding: 0 15px; box-sizing: border-box; margin-top: 15px;">
+              <a href="https://www.google.com/maps/search/?api=1&query=-23.227805555555555,-44.748138888888886" target="_blank" class="button" style="margin: 0 auto; display: block; max-width: 300px; width: 100%;">
+                Abrir no Google Maps
               </a>
             </div>
           </div>
@@ -306,6 +428,56 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <!-- Previsão do Tempo -->
+      <section class="weather-section fade-in-up">
+        <h2>Previsão do Tempo</h2>
+        <p class="weather-intro">Paraty em Novembro - Como se preparar:</p>
+
+        <div class="weather-card">
+          <div class="weather-icon">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+              <path d="M16 13a4 4 0 0 1-8 0"/>
+            </svg>
+          </div>
+          <div class="weather-info">
+            <div class="temperature">
+              <span class="temp-value">25-32°C</span>
+              <span class="temp-label">Temperatura média</span>
+            </div>
+            <div class="weather-details">
+              <div class="weather-detail">
+                <span class="detail-icon">☁️</span>
+                <span>Parcialmente nublado</span>
+              </div>
+              <div class="weather-detail">
+                <span class="detail-icon">🌧️</span>
+                <span>Possibilidade de chuva</span>
+              </div>
+              <div class="weather-detail">
+                <span class="detail-icon">💨</span>
+                <span>Ventos leves</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="weather-tips">
+          <h3>Dicas para o dia:</h3>
+          <ul class="styled-list">
+            <li>Leve roupas leves e confortáveis</li>
+            <li>Não esqueça o protetor solar</li>
+            <li>Tenha um guarda-chuva ou capa de chuva à mão</li>
+            <li>Hidrate-se constantemente</li>
+          </ul>
+        </div>
+
+        <p class="small-note">
+          <em>Previsão baseada no histórico climático de Novembro em Paraty</em>
+        </p>
       </section>
     </main>
     
